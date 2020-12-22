@@ -17,6 +17,7 @@ urlpatterns = [
     path("users/", include("django_celery_progress_bar.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("tasks/", include("django_celery_progress_bar.tasks.urls", namespace="tasks")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS

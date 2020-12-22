@@ -61,5 +61,3 @@ services:
     <<: *django
     image: django_celery_progress_bar_production_flower
     command: /start-flower
-
-  

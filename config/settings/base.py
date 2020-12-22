@@ -4,6 +4,7 @@ Base settings to build other settings files upon.
 from pathlib import Path
 
 import environ
+from celery.schedules import crontab
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # django_celery_progress_bar/
@@ -77,6 +78,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "django_celery_progress_bar.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "django_celery_progress_bar.tasks.apps.UsersConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -306,3 +308,11 @@ REST_FRAMEWORK = {
 CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+CELERY_BEAT_SCHEDULE = {
+    "dummy_counter_task": {
+        "task": "dummy_counter_task",
+        "schedule": crontab(minute="*/3"),
+    },
+}

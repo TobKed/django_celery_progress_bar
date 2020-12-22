@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Celery tasks{% endblock %}
+
+{% block content %}
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Task ID</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task_id in task_ids %}
+            <tr>
+                <td class="align-middle">{{ task_id }}</td>
+                <td>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="task_id" value="{{ task_id }}"/>
+                        <button type="submit" class="btn btn-outline-dark">trigger</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
