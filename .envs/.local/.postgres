@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=django_celery_progress_bar
+POSTGRES_USER=RnkOQPmqbkhKTStohJqWnwrFBxjRHcnn
+POSTGRES_PASSWORD=aXzsL7ckocxdf5FY5J9T9UXX844zDZfoiGFimH3B3l3ynXKGflVwPnQZlehUtXtF
