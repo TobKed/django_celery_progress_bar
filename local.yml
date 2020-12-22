@@ -65,6 +65,17 @@ services:
     ports: []
     command: /start-celeryworker
 
+  celeryworker_highprio:
+    <<: *django
+    image: django_celery_progress_bar_local_celeryworker_highprio
+    container_name: celeryworker_highprio
+    depends_on:
+      - redis
+      - postgres
+
+    ports: []
+    command: /start-celeryworker-highprio
+
   celerybeat:
     <<: *django
     image: django_celery_progress_bar_local_celerybeat

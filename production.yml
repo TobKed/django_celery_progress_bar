@@ -52,6 +52,11 @@ services:
     image: django_celery_progress_bar_production_celeryworker
     command: /start-celeryworker
 
+  celeryworker_highprio:
+    <<: *django
+    image: django_celery_progress_bar_production_celeryworker_highprio
+    command: /start-celeryworker-highprio
+
   celerybeat:
     <<: *django
     image: django_celery_progress_bar_production_celerybeat

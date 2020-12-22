@@ -13,7 +13,7 @@ def celery_tasks_view(request):
     if celery_inspect:
         tasks = celery_inspect.registered_tasks()
         task_ids = (
-            sorted(list(itertools.chain.from_iterable(tasks.values())))
+            sorted(set(itertools.chain.from_iterable(tasks.values())))
             if tasks
             else None
         )
