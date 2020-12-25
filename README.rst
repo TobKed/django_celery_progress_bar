@@ -1,7 +1,7 @@
 django celery progress bar
 ==========================
 
-Behold My Awesome Project!
+Progress Bar to track progress of celery tasks
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
@@ -13,6 +13,12 @@ Behold My Awesome Project!
 
 :License: MIT
 
+.. raw:: html
+
+    <div align="center">
+      <img src="images/progress_bar.gif"
+           alt="progress bar">
+    </div>
 
 Settings
 --------
